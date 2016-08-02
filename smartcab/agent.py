@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 
-
 import random
 from environment import Agent, Environment
 from planner import RoutePlanner
@@ -11,7 +10,9 @@ from collections import namedtuple
 from QLearningAgent import QLearningAgent
 import pprint
 
-#August 1st: Line 50 and 29
+#Original file: https://github.com/udacity/machine-learning/blob/master/projects/smartcab/smartcab/agent.py
+#Changes, August 1st: Line 50 and 29
+
 class LearningAgent(Agent):
     """An agent that learns to drive in the smartcab world."""
 
@@ -122,7 +123,3 @@ def run():
 if __name__ == '__main__':
     run()
 
-
-
-
-#Original file: https://github.com/udacity/machine-learning/blob/master/projects/smartcab/smartcab/agent.py
