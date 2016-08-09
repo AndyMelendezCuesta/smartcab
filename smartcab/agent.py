@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 
+
 import random
 from environment import Agent, Environment
 from planner import RoutePlanner
@@ -10,8 +11,10 @@ from collections import namedtuple
 from QLearningAgent import QLearningAgent
 import pprint
 
+
 #Original file: https://github.com/udacity/machine-learning/blob/master/projects/smartcab/smartcab/agent.py
-#Changes, August 1st: Line 50 and 29
+#August 1st: Line 50 and 29
+
 
 class LearningAgent(Agent):
     """An agent that learns to drive in the smartcab world."""
@@ -21,7 +24,7 @@ class LearningAgent(Agent):
         self.color = 'red'  # override color
         self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
         # TODO: Initialize any additional variables here
-        self.reward = 0
+        self.previous_reward = 0
         self.previous_action = None
 
     def reset(self, destination=None):
@@ -115,11 +118,8 @@ def run():
     print "starting simulation"
     sim = Simulator(e, update_delay=0.00001)  # reduce update_delay to speed up simulation
 
-    sim.run(n_trials=100)  # press Esc or close pygame window to quit
+    sim.run(n_trials=500000)  # press Esc or close pygame window to quit
 
-#LQTest5.txt 5 trials
-#LQTest6.txt 6 trials
 
 if __name__ == '__main__':
     run()
-
